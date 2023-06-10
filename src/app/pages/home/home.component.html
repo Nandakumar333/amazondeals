@@ -1,0 +1,46 @@
+<div class="product_grid">
+    <ul class="product_list list">
+        <li class="product_item" *ngFor="let product of productList">
+            <div class="product_sale">
+                <p>On Sale</p>
+            </div>
+            <div class="product_image">
+                <a href="#"><img [src]="product.productImageUrl" alt=""></a>
+                <div class="product_buttons">
+                    <button class="product_whatsapp"><fa-icon [icon]="['fab', 'whatsapp']"></fa-icon></button>
+                    <button class="product_telegram"><fa-icon [icon]="['fab', 'telegram']"></fa-icon></button>
+                    <button class="product_facebook"><fa-icon [icon]="['fab', 'facebook']"></fa-icon></button>
+                    <div class="quick_view">
+                        <a routerLink="/products/{{product.productId}}">
+                            <h6><fa-icon [icon]="['fas', 'magnifying-glass-plus']"></fa-icon> View</h6>
+                        </a>
+                        <a routerLink="/products/{{product.productId}}">
+                            <h6 style="background-color: #ff0000cc;"><fa-icon [icon]="['fas', 'store']"></fa-icon> Buy</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="product_values">
+                <div class="product_title">
+                    <h5>{{product.productName}}</h5>
+                </div>
+                <div class="product_price">
+                    <span class="price_old">₹50000</span>
+                    <span class="price_new">₹{{product.productPrice}}</span>
+                    <span class="product_rating"></span>
+                </div>
+                <div class="product_desc">
+                    <p class="truncate">Sed sodales odio non metus tincidunt consectetur. Integer non lobortis orci. In
+                        hac habitasse platea dictumst. Suspendisse sit amet condimentum arcu. Curabitur venenatis
+                        interdum lectus, vitae egestas sem facilisis sit amet. Praesent tortor purus, vulputate at
+                        ultricies quis, aliquet sed ante.</p>
+                </div>
+                <div class="product_buttons">
+                    <button class="product_heart"><i class="fa fa-heart"></i></button>
+                    <button class="product_compare"><i class="fa fa-random"></i></button>
+                    <button class="add_to_cart"><i class="fa fa-shopping-cart"></i></button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
